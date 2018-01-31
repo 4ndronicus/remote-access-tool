@@ -1,0 +1,35 @@
+#define VOS_NT_WINDOWS32             0x00040004L
+#define VFT_APP                      0x00000001L
+
+//this will set your .exe icon
+//A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "client.ico"
+
+1 VERSIONINFO
+FILEVERSION 0,1,1,1
+PRODUCTVERSION 0,1,1,1
+FILETYPE VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "CompanyName", "Your Mom Is Fat, LLC"
+            VALUE "FileVersion", "0.0.0.0.0.1"
+            VALUE "FileDescription", "Windows Client"
+            VALUE "InternalName", "Client"
+            VALUE "LegalCopyright", "Copyright 2017"
+            VALUE "LegalTrademarks", ""
+            VALUE "OriginalFilename", "client.exe"
+            VALUE "ProductName", "Windows Client"
+            VALUE "ProductVersion", "0.0.0.0.0.1"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0409, 1252 //language codes
+    }
+}
+
+1 24 "xp.manifest"
+
+IDR_ICO_MAIN ICON "client.ico"

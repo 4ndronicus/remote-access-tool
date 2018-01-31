@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="windows_server" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-lws2_32" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lws2_32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="gdi32" />
+			<Add library="user32" />
+			<Add library="kernel32" />
+			<Add library="comctl32" />
+		</Linker>
+		<Unit filename="../../libraries/doWinSock.cpp" />
+		<Unit filename="../../libraries/doWinSock.h" />
+		<Unit filename="../../libraries/logging_class.cpp" />
+		<Unit filename="../../libraries/logging_class.h" />
+		<Unit filename="../../libraries/protocol.h" />
+		<Unit filename="../../libraries/string_ops.cpp" />
+		<Unit filename="../../libraries/string_ops.h" />
+		<Unit filename="../../libraries/time_class.cpp" />
+		<Unit filename="../../libraries/time_class.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="network.ico" />
+		<Unit filename="resources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

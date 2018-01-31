@@ -1,0 +1,118 @@
+# depslib dependency file v1.0
+1492188582 source:c:\users\smorris\dropbox\development\libraries\dowinsock.cpp
+	<iostream>
+	<winsock2.h>
+	"protocol.h"
+	"doWinSock.h"
+	"logging_class.h"
+	<ws2tcpip.h>
+	<string>
+	<windows.h>
+
+1492189964 c:\users\smorris\dropbox\development\libraries\protocol.h
+
+1491720951 c:\users\smorris\dropbox\development\libraries\dowinsock.h
+	"logging_class.h"
+
+1491197294 c:\users\smorris\dropbox\development\libraries\logging_class.h
+	<string>
+
+1492136013 source:c:\users\smorris\dropbox\development\libraries\logging_class.cpp
+	<string>
+	<iostream>
+	<fstream>
+	<string.h>
+	"logging_class.h"
+	"time_class.h"
+	"string_ops.h"
+
+1492136013 c:\users\smorris\dropbox\development\libraries\time_class.h
+
+1466470012 c:\users\smorris\dropbox\development\libraries\string_ops.h
+
+1492136013 source:c:\users\smorris\dropbox\development\libraries\string_ops.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<locale>
+	"string_ops.h"
+	"logging_class.h"
+
+1492136013 source:c:\users\smorris\dropbox\development\libraries\time_class.cpp
+	"time_class.h"
+	<stdlib.h>
+	<time.h>
+
+1492147186 source:c:\users\smorris\dropbox\development\codeblocks\windows_client\resources.rc
+
+1492191663 source:c:\users\smorris\dropbox\development\codeblocks\windows_client\main.cpp
+	<windows.h>
+	<string>
+	<string.h>
+	<winver.h>
+	<commctrl.h>
+	"constants.h"
+	"../../libraries/protocol.h"
+	"../../libraries/logging_class.h"
+	"../../libraries/doWinSock.h"
+	"../../libraries/string_ops.h"
+	"child_controls.h"
+
+1492191633 c:\users\smorris\dropbox\development\codeblocks\windows_client\constants.h
+
+1492149495 c:\users\smorris\dropbox\development\codeblocks\windows_client\child_controls.h
+
+1492188582 source:c:\users\smorris\documents\libraries\dowinsock.cpp
+	<iostream>
+	<winsock2.h>
+	"protocol.h"
+	"doWinSock.h"
+	"logging_class.h"
+	<ws2tcpip.h>
+	<string>
+	<windows.h>
+
+1492189964 c:\users\smorris\documents\libraries\protocol.h
+
+1491720951 c:\users\smorris\documents\libraries\dowinsock.h
+	"logging_class.h"
+
+1491197294 c:\users\smorris\documents\libraries\logging_class.h
+	<string>
+
+1492136013 source:c:\users\smorris\documents\libraries\string_ops.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<locale>
+	"string_ops.h"
+	"logging_class.h"
+
+1466470012 c:\users\smorris\documents\libraries\string_ops.h
+
+1492136013 source:c:\users\smorris\documents\libraries\time_class.cpp
+	"time_class.h"
+	<stdlib.h>
+	<time.h>
+
+1492136013 c:\users\smorris\documents\libraries\time_class.h
+
+1492190221 source:c:\users\smorris\documents\remote_access_tool\windows_client\main.cpp
+	<windows.h>
+	<string>
+	<string.h>
+	<winver.h>
+	<commctrl.h>
+	"constants.h"
+	"../../libraries/protocol.h"
+	"../../libraries/logging_class.h"
+	"../../libraries/doWinSock.h"
+	"../../libraries/string_ops.h"
+	"child_controls.h"
+
+1492188033 c:\users\smorris\documents\remote_access_tool\windows_client\constants.h
+
+1492189109 c:\users\smorris\documents\remote_access_tool\windows_client\child_controls.h
+
+1492147186 source:c:\users\smorris\documents\remote_access_tool\windows_client\resources.rc
+

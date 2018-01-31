@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1492184982 source:f:\001-active_projects\libraries\dowinsock.cpp
+	<iostream>
+	<winsock2.h>
+	"protocol.h"
+	"doWinSock.h"
+	"logging_class.h"
+	<ws2tcpip.h>
+	<string>
+	<windows.h>
+
+1492186364 f:\001-active_projects\libraries\protocol.h
+
+1491717351 f:\001-active_projects\libraries\dowinsock.h
+	"logging_class.h"
+
+1491193694 f:\001-active_projects\libraries\logging_class.h
+	<string>
+
+1513827695 source:f:\001-active_projects\libraries\logging_class.cpp
+	<string>
+	<iostream>
+	<fstream>
+	<string.h>
+	"logging_class.h"
+	"time_class.h"
+	"string_ops.h"
+
+1492132413 f:\001-active_projects\libraries\time_class.h
+
+1466466412 f:\001-active_projects\libraries\string_ops.h
+
+1492132413 source:f:\001-active_projects\libraries\string_ops.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<locale>
+	"string_ops.h"
+	"logging_class.h"
+
+1492132413 source:f:\001-active_projects\libraries\time_class.cpp
+	"time_class.h"
+	<stdlib.h>
+	<time.h>
+
+1492143586 source:f:\001-active_projects\remote_access_tool\windows_client\resources.rc
+

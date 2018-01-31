@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="windows_client" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/client" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lws2_32 -static-libgcc -static-libstdc++" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/client" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lws2_32 -static-libgcc -static-libstdc++" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="gdi32" />
+			<Add library="user32" />
+			<Add library="kernel32" />
+			<Add library="comctl32" />
+		</Linker>
+		<Unit filename="../../libraries/doWinSock.cpp" />
+		<Unit filename="../../libraries/doWinSock.h" />
+		<Unit filename="../../libraries/logging_class.cpp" />
+		<Unit filename="../../libraries/logging_class.h" />
+		<Unit filename="../../libraries/protocol.h" />
+		<Unit filename="../../libraries/string_ops.cpp" />
+		<Unit filename="../../libraries/string_ops.h" />
+		<Unit filename="../../libraries/time_class.cpp" />
+		<Unit filename="../../libraries/time_class.h" />
+		<Unit filename="child_controls.h" />
+		<Unit filename="constants.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="network.ico" />
+		<Unit filename="resources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="xp.manifest" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
