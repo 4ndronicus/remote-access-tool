@@ -132,7 +132,7 @@ int BuildWindowControls()
 
     TXT_IP_ADDR = CreateWindowEx(0,
                                  "EDIT",
-                                 "10.0.10.32",
+                                 "10.0.10.55",
                                  WS_VISIBLE | WS_CHILD | WS_BORDER | ES_AUTOHSCROLL,
                                  30, 36,
                                  100, 18,
@@ -241,8 +241,7 @@ int BuildWindowControls()
     memset(&LvCol,0,sizeof(LvCol));                  // Zero Members
     LvCol.mask = LVCF_TEXT|LVCF_WIDTH|LVCF_SUBITEM;  // Type of mask
     LvCol.cx = 0x28;                                 // width between each column
-    LvCol.cx = COL_WIDTH;                            // width of column
-
+    LvCol.cx = COL_WIDTH_PID;                            // width of column
     char item[BUFF_SIZE] = {'\0'};
 
     // Add the columns
@@ -250,6 +249,7 @@ int BuildWindowControls()
     LvCol.pszText = item;
     ListView_InsertColumn( LISTVIEW_PROCLIST, 0, &LvCol );
 
+    LvCol.cx = COL_WIDTH_EXE;                            // width of column
     strcpy( item, "EXE Name");
     LvCol.pszText = item;
     ListView_InsertColumn( LISTVIEW_PROCLIST, 1, &LvCol );
@@ -666,6 +666,7 @@ int Bttn_Kill_Selected_Click(){
 
     preBuffer.append( KPROC );
     preBuffer.append( FIELD_DELIM );
+    // Grab the process id from the listview box
     preBuffer.append( "Process id goes here" );
     l.wr( currFunc, "Sending data: ", preBuffer );
     winSockObj.sendData( encryptBuffer( preBuffer ) );
@@ -1033,6 +1034,8 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
             Bttn_Clear_Listview_Click();
             break;
         case ID_KILL_SELECTED:
+            // Still have to determine how to get the selected process out of the listview
+            // Bttn_Kill_Selected_Click();
             break;
         }
 

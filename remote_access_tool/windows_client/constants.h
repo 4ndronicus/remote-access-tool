@@ -9,7 +9,8 @@
 #define HWND_HEIGHT             768
 
 #define BUFF_SIZE               1024
-#define COL_WIDTH               150
+#define COL_WIDTH_PID           75
+#define COL_WIDTH_EXE           350
 
 #define IDR_ICO_MAIN            1234
 

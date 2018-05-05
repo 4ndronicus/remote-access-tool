@@ -45,3 +45,66 @@
 
 1492143586 source:f:\001-active_projects\remote_access_tool\windows_client\resources.rc
 
+1517383200 source:g:\remote-access-tool\libraries\dowinsock.cpp
+	<iostream>
+	<winsock2.h>
+	"protocol.h"
+	"doWinSock.h"
+	"logging_class.h"
+	<ws2tcpip.h>
+	<string>
+	<windows.h>
+
+1492189964 g:\remote-access-tool\libraries\protocol.h
+
+1491720951 g:\remote-access-tool\libraries\dowinsock.h
+	"logging_class.h"
+
+1491197294 g:\remote-access-tool\libraries\logging_class.h
+	<string>
+
+1492136013 source:g:\remote-access-tool\libraries\logging_class.cpp
+	<string>
+	<iostream>
+	<fstream>
+	<string.h>
+	"logging_class.h"
+	"time_class.h"
+	"string_ops.h"
+
+1492136013 g:\remote-access-tool\libraries\time_class.h
+
+1466470012 g:\remote-access-tool\libraries\string_ops.h
+
+1492136013 source:g:\remote-access-tool\libraries\string_ops.cpp
+	<iostream>
+	<string.h>
+	<string>
+	<locale>
+	"string_ops.h"
+	"logging_class.h"
+
+1492136013 source:g:\remote-access-tool\libraries\time_class.cpp
+	"time_class.h"
+	<stdlib.h>
+	<time.h>
+
+1492147186 source:g:\remote-access-tool\remote_access_tool\windows_client\resources.rc
+
+1525502836 source:g:\remote-access-tool\remote_access_tool\windows_client\main.cpp
+	<windows.h>
+	<string>
+	<string.h>
+	<winver.h>
+	<commctrl.h>
+	"constants.h"
+	"../../libraries/protocol.h"
+	"../../libraries/logging_class.h"
+	"../../libraries/doWinSock.h"
+	"../../libraries/string_ops.h"
+	"child_controls.h"
+
+1525502959 g:\remote-access-tool\remote_access_tool\windows_client\constants.h
+
+1492189109 g:\remote-access-tool\remote_access_tool\windows_client\child_controls.h
+
