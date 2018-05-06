@@ -157,8 +157,8 @@ std::string getRunningProcs()
     DWORD eNum;
     TCHAR sysMsg[256];
     TCHAR* p;
-    HANDLE processHandle = NULL;
-    TCHAR filename[MAX_PATH];
+//    HANDLE processHandle = NULL;
+//    TCHAR filename[MAX_PATH];
 
     HANDLE hModuleSnap = INVALID_HANDLE_VALUE;
     MODULEENTRY32 me32;
@@ -267,6 +267,12 @@ std::string processCommand( std::string cmdString )
 
         l.wr( currFunc, "Remote user wants the list of processes running here" );
         outBuffer = getRunningProcs();
+
+    }
+    else if ( cmdString == KPROC )
+    {
+
+        l.wr( currFunc, "Remote user wants to terminate a process" );
 
     }
 

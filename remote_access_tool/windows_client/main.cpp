@@ -656,18 +656,73 @@ void Disconnect_Enable()
 
 }
 
+/*#########################################################################################################################
+
+FUNCTION NAME: int Get_Process_ID()
+AUTHOR: SCOTT MORRIS
+CREATION DATE: 5/5/2018 6:46:37 PM
+DESCRIPTION:
+	Determines the process id of the item selected in the process list and returns it to the calling function as an int
+	eger.
+RECEIVES: NOTHING
+RETURNS: Integer - the ID of the process that the user has selected
+PRECONDITIONS: User needs to select a process from the list
+POSTCONDITIONS: NONE
+CODE EXAMPLE: int procID = Get_Process_ID();
+NOTES:
+
+#########################################################################################################################*/
+int Get_Process_ID(){
+
+    char Text[255]={0};
+    int iSlected=0;
+
+    iSlected=SendMessage(LISTVIEW_PROCLIST,LVM_GETNEXTITEM,-1,LVNI_FOCUSED);
+    memset(&LvItem,0,sizeof(LvItem));
+    LvItem.mask=LVIF_TEXT;
+    LvItem.iSubItem=0;
+    LvItem.pszText=Text;
+    LvItem.cchTextMax=256;
+    LvItem.iItem=iSlected;
+
+    SendMessage(LISTVIEW_PROCLIST,LVM_GETITEMTEXT,
+                iSlected, (LPARAM)&LvItem);
+
+    int procNum = atoi(Text);
+    return procNum;
+}
+
+/*#########################################################################################################################
+
+FUNCTION NAME: Bttn_Kill_Selected_Click()
+AUTHOR: SCOTT MORRIS
+CREATION DATE: 5/5/2018 4:51:13 PM
+DESCRIPTION:
+	When the user has selected a process from the list that they would like to kill, they click the "Kill Process" butt
+	on, and this function gets called.
+RECEIVES: NOTHING
+RETURNS: NOTHING
+PRECONDITIONS: An entry in the process list must be selected.
+POSTCONDITIONS: The process on the remote system has been terminated.
+CODE EXAMPLE: Bttn_Kill_Selected_Click();
+NOTES:
+
+#########################################################################################################################*/
 int Bttn_Kill_Selected_Click(){
     std::string currFunc = "Bttn_Kill_Selected_Click()";
     std::string preBuffer = "";
     std::string recvBuffer = "";
+    char szProcNum[10] = {0};
     Log l;
+    int procNum = 0;
 
     l.wr( currFunc, "Clicked the button to kill a remote process" );
 
     preBuffer.append( KPROC );
     preBuffer.append( FIELD_DELIM );
-    // Grab the process id from the listview box
-    preBuffer.append( "Process id goes here" );
+    procNum = Get_Process_ID();
+
+    preBuffer.append(itoa(procNum,szProcNum,10));
     l.wr( currFunc, "Sending data: ", preBuffer );
     winSockObj.sendData( encryptBuffer( preBuffer ) );
     l.wr( currFunc, "Data sent" );
@@ -926,6 +981,23 @@ int EnableGetRemoteProcs()
     return 0;
 }
 
+/*#########################################################################################################################
+
+FUNCTION NAME: Combo_Action_Selected( int )
+AUTHOR: SCOTT MORRIS
+CREATION DATE: 5/5/2018 4:55:00 PM
+DESCRIPTION:
+	When an item in the drop-down combo box is selected, this function gets called.  When this happens, the interface c
+	ontrols appear and disappear as appropriate for what was selected.
+RECEIVES: An integer representing which item was selected.
+RETURNS: NOTHING
+PRECONDITIONS: Item selected from drop-down combo box.
+POSTCONDITIONS: Interface has changed.
+CODE EXAMPLE:
+NOTES:
+
+#########################################################################################################################*/
+
 int Combo_Action_Selected( int selIndex )
 {
 
@@ -986,8 +1058,24 @@ void CenterWindow(HWND hWnd)
     SetWindowPos(hWnd, NULL, left, top, right, bottom, SWP_NOZORDER | SWP_NOACTIVATE);
 }
 
-/*  This function is called by the Windows function DispatchMessage()  */
+/*#########################################################################################################################
 
+FUNCTION NAME: LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+AUTHOR: SCOTT MORRIS
+CREATION DATE: 5/5/2018 4:57:27 PM
+DESCRIPTION: This is our message processing function for our application.
+RECEIVES:
+	HWND as target window
+	UINT as the message for the window
+	WPARAM as additional data for the message
+	LPARAM as additional data for the message
+RETURNS: NOTHING
+PRECONDITIONS: NONE
+POSTCONDITIONS: Really depends on what the message was and what it was sent to.
+CODE EXAMPLE:
+NOTES:
+
+#########################################################################################################################*/
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     int wmId, wmEvent;
@@ -1035,7 +1123,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
             break;
         case ID_KILL_SELECTED:
             // Still have to determine how to get the selected process out of the listview
-            // Bttn_Kill_Selected_Click();
+             Bttn_Kill_Selected_Click();
             break;
         }
 
